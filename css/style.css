@@ -1,7 +1,13 @@
-*{
+:root {
+    --primary-color: #185ee0;
+    --secondary-color: #e6eef9;
+}
+
+*, *:after, *:before{
     margin: 0;
     padding: 0;
     outline: none;
+    box-sizing: border-box;
 }
 
 body{
@@ -413,3 +419,102 @@ a:hover{
 }
 
 /* Benefits */
+
+
+/* Plans */
+
+.plans-header{
+    padding: 130px 0 102px 0;
+    text-align: center;
+}
+
+.plans-title{
+    max-width: 492px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.plans-description{
+    font-size: 18px;
+    color: #A6A6A6;
+}
+
+
+.tabs {
+    display: flex;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+    padding: 0.75rem;
+    border-radius: 25px;
+    max-width: 333px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 70px auto;
+}
+.tabs * {
+    z-index: 2;
+}
+input[type="radio"] {
+    display: none;
+}
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+    width: 200px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: color 0.15s ease-in;
+}
+.notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0.75rem;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    transition: 0.15s ease-in;
+}
+input[type="radio"]:checked + label {
+    color: #fff;
+}
+input[type="radio"]:checked + label > .notification {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+input[id="radio-1"]:checked ~ .glider {
+    transform: translateX(-80px);
+}
+input[id="radio-2"]:checked ~ .glider {
+    transform: translateX(50%);
+}
+input[id="radio-3"]:checked ~ .glider {
+    transform: translateX(200%);
+}
+.glider {
+    position: absolute;
+    display: flex;
+    height: 54px;
+    width: 155px;
+    background-color: #54BD95;
+    z-index: 1;
+    border-radius: 15px;
+    transition: 0.25s ease-out;
+}
+@media (max-width: 700px) {
+    .tabs {
+        transform: scale(0.6);
+   }
+}
+
+/* Plans */
